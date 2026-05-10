@@ -1,0 +1,24 @@
+<section class="brands" id="brands">
+  <div class="brands__container">
+    <div class="brands__header" data-aos="fade-up">
+      <span class="brands__label">Our Partners</span>
+      <h2 class="brands__title">Trusted Brands We Distribute</h2>
+      <p class="brands__subtitle">
+        Authorized distributor of India's leading pharmaceutical manufacturers.
+      </p>
+    </div>
+
+    <div class="brands__marquee-wrapper">
+      <div class="brands__marquee">
+        @for (brand of brands; track $index) {
+          <div class="brands__card" [style.--brand-color]="brand.color">
+            <span class="brands__card-initial" [style.background]="brand.color">
+              {{ brand.name.charAt(0) }}
+            </span>
+            <span class="brands__card-name">{{ brand.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

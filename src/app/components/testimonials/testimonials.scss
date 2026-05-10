@@ -1,0 +1,143 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.testimonials {
+  @include section-padding;
+  background: $card;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    @include section-heading;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include section-subheading;
+    margin: 0 auto;
+  }
+
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__rating-card {
+    background: $surface;
+    border-radius: $radius-xl;
+    padding: 40px 32px;
+    text-align: center;
+    border: 1px solid $divider;
+
+    @include desktop {
+      padding: 48px 40px;
+    }
+  }
+
+  &__google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 28px;
+  }
+
+  &__score {
+    margin-bottom: 32px;
+  }
+
+  &__score-number {
+    display: block;
+    font-family: $font-heading;
+    font-size: 4rem;
+    font-weight: 800;
+    color: $text-primary;
+    line-height: 1;
+    margin-bottom: 12px;
+
+    @include desktop {
+      font-size: 5rem;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__score-count {
+    font-size: 0.9rem;
+    color: $text-light;
+  }
+
+  // === REVIEW CARD ===
+  &__review {
+    background: $card;
+    border-radius: $radius-lg;
+    padding: 24px;
+    margin-bottom: 28px;
+    text-align: left;
+    border: 1px solid $divider;
+  }
+
+  &__review-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  &__review-avatar {
+    width: 44px;
+    height: 44px;
+    @include flex-center;
+    background: $primary;
+    color: #fff;
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__review-name {
+    font-family: $font-heading;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 2px;
+  }
+
+  &__review-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  &__review-text {
+    font-size: 0.95rem;
+    color: $text-secondary;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  &__cta {
+    @include btn-outline;
+    padding: 14px 28px;
+  }
+}

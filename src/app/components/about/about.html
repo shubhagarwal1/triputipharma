@@ -1,0 +1,53 @@
+<section class="about" id="about">
+  <div class="about__container">
+    <div class="about__content" data-aos="fade-right">
+      <span class="about__label">About Us</span>
+      <h2 class="about__title">Gurugram's Trusted<br>Pharmaceutical Distributor</h2>
+      <p class="about__text">
+        <strong>Triputi Pharma</strong> is a leading pharmaceutical products wholesaler
+        and distributor headquartered in Basai Industrial Area, Gurugram. For over a
+        decade, we have been the trusted supply partner for pharmacies, hospitals, and
+        healthcare providers across Haryana and the NCR region.
+      </p>
+      <p class="about__text">
+        We represent some of India's most reputed pharmaceutical manufacturers including
+        KASDAP Healthcare, KASDAP Genexx, and PCI — offering a comprehensive range of
+        500+ quality medicines and healthcare products at competitive wholesale prices.
+      </p>
+
+      <div class="about__highlights">
+        @for (item of highlights; track item.title) {
+          <div class="about__highlight-card">
+            <div class="about__highlight-icon">
+              @switch (item.icon) {
+                @case ('truck') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="13" x="1" y="3" rx="2"/><path d="m17 8 4 2v5a1 1 0 0 1-1 1h-1"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M5 16h6"/></svg>
+                }
+                @case ('shield') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                }
+                @case ('globe') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                }
+              }
+            </div>
+            <div>
+              <h4 class="about__highlight-title">{{ item.title }}</h4>
+              <p class="about__highlight-desc">{{ item.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="about__image-wrapper" data-aos="fade-left">
+      <div class="about__image-card">
+        <img src="images/building.jpeg" alt="Triputi Pharma Building - Basai Industrial Area, Gurugram" loading="lazy">
+        <div class="about__image-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Basai Industrial Area, Gurugram
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

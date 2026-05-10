@@ -1,0 +1,100 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.brands {
+  padding: 80px 0;
+  background: $primary-50;
+  overflow: hidden;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    @include section-heading;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include section-subheading;
+    margin: 0 auto;
+  }
+
+  &__marquee-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+  }
+
+  &__marquee {
+    display: flex;
+    gap: 24px;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 28px;
+    background: $card;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border: 1px solid $divider;
+    transition: all $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__card-initial {
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    border-radius: $radius-md;
+    color: #fff;
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  &__card-name {
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text-primary;
+  }
+}

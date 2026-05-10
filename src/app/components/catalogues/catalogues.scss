@@ -1,0 +1,159 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.catalogues {
+  @include section-padding;
+  background: $surface;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    @include section-heading;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include section-subheading;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // === CARD ===
+  &__card {
+    background: $card;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    border: 1px solid $divider;
+    transition: all $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-lg;
+      transform: translateY(-6px);
+      border-color: transparent;
+    }
+  }
+
+  &__card-header {
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+  }
+
+  &__card-icon {
+    width: 52px;
+    height: 52px;
+    @include flex-center;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: $radius-md;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  &__card-brand {
+    font-family: $font-heading;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02em;
+  }
+
+  &__card-body {
+    padding: 24px;
+  }
+
+  &__card-title {
+    font-family: $font-heading;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  &__card-desc {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  &__card-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    background: $surface;
+    border-radius: $radius-full;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $text-secondary;
+
+    svg {
+      color: $text-light;
+    }
+  }
+
+  &__card-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__btn-view {
+    @include btn-outline;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    flex: 1;
+  }
+
+  &__btn-download {
+    @include btn-primary;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    flex: 1;
+  }
+}
