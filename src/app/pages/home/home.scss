@@ -1,0 +1,88 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+main {
+  overflow-x: hidden;
+}
+
+.local-landing {
+  padding: 88px 0 20px;
+  background: linear-gradient(180deg, $primary-50 0%, $surface 100%);
+  border-bottom: 1px solid $divider;
+
+  &__inner {
+    @include container;
+    max-width: 820px;
+  }
+
+  &__eyebrow {
+    font-family: $font-heading;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: $text-primary;
+    line-height: 1.2;
+    margin-bottom: 14px;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: $text-secondary;
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  &__cta {
+    @include btn-ghost;
+    color: $primary;
+    padding-left: 0;
+
+    &:hover {
+      background: transparent;
+      text-decoration: underline;
+    }
+  }
+}
+
+.fab-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  @include flex-center;
+  background: $whatsapp;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba($whatsapp, 0.4);
+  transition: all $transition-base;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba($whatsapp, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include desktop {
+    width: 64px;
+    height: 64px;
+    bottom: 32px;
+    right: 32px;
+  }
+}

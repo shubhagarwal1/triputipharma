@@ -22,3 +22,6 @@ Thumbs.db
 
 # PDF catalogues (hosted via GitHub Releases)
 *.pdf
+
+# Local Netlify folder
+.netlify

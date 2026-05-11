@@ -1,7 +1,7 @@
 <nav class="navbar" [class.scrolled]="isScrolled()">
   <div class="navbar__container">
     <!-- Logo -->
-    <a class="navbar__logo" (click)="navigateTo('hero')">
+    <a class="navbar__logo" routerLink="/" (click)="onLogoClick($event)">
       <span class="navbar__logo-monogram">TP</span>
       <span class="navbar__logo-text">
         <span class="navbar__logo-name">TRIPUTI</span>

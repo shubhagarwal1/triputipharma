@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   ElementRef,
   ViewChild,
+  input,
 } from '@angular/core';
 import { ScrollService } from '../../services/scroll';
 
@@ -15,6 +16,9 @@ import { ScrollService } from '../../services/scroll';
 })
 export class Hero implements AfterViewInit {
   @ViewChild('swiperEl') swiperEl!: ElementRef;
+
+  /** When a city landing block shows an h1, hero titles become h2 for a single h1 per page. */
+  readonly demoteHeading = input(false);
 
   slides = [
     {

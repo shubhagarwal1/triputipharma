@@ -1,0 +1,28 @@
+# Triputi Pharma — important URLs (Search Console, audits, partner links)
+# One URL per line. Submit https://triputipharma.com/sitemap.xml in Google Search Console.
+
+https://triputipharma.com/
+https://triputipharma.com/sitemap.xml
+https://triputipharma.com/robots.txt
+https://triputipharma.com/locations/sirsa
+https://triputipharma.com/locations/gurugram
+https://triputipharma.com/locations/faridabad
+https://triputipharma.com/locations/sonipat
+https://triputipharma.com/locations/panipat
+https://triputipharma.com/locations/karnal
+https://triputipharma.com/locations/rohtak
+https://triputipharma.com/locations/hisar
+https://triputipharma.com/locations/bhiwani
+https://triputipharma.com/locations/rewari
+https://triputipharma.com/locations/jhajjar
+https://triputipharma.com/locations/bahadurgarh
+https://triputipharma.com/locations/ambala
+https://triputipharma.com/locations/yamunanagar
+https://triputipharma.com/locations/kurukshetra
+https://triputipharma.com/locations/kaithal
+https://triputipharma.com/locations/jind
+https://triputipharma.com/locations/fatehabad
+https://triputipharma.com/locations/noida
+https://triputipharma.com/locations/delhi
+https://triputipharma.com/locations/palwal
+https://triputipharma.com/locations/mahendragarh

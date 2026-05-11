@@ -1,0 +1,17 @@
+{
+  "name": "Triputi Pharma",
+  "short_name": "Triputi Pharma",
+  "description": "Pharmaceutical wholesaler and distributor in Gurugram, Haryana — serving pharmacies across Haryana and NCR.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF9",
+  "theme_color": "#0F766E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

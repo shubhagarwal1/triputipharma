@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# LLM / AI crawlers — allow indexing of public marketing pages
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemaps
+Sitemap: https://triputipharma.com/sitemap.xml

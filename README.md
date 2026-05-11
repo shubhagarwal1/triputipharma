@@ -17,6 +17,17 @@ Built with Angular 21, SCSS, Swiper.js, and AOS.
 
 ---
 
+## SEO & local landing pages
+
+- **Strategy doc (backlinks, Search Console, maintenance):** [docs/SEO-AND-BACKLINKS.md](docs/SEO-AND-BACKLINKS.md)
+- **Sitemap:** https://triputipharma.com/sitemap.xml (also in `public/sitemap.xml`)
+- **URL list for audits:** `public/seo-urls.txt`
+- **City pages:** `https://triputipharma.com/locations/{city}` (e.g. `/locations/sirsa`). Optional: `/?city=sirsa` redirects to the canonical path.
+- **Source for cities + unique blurbs:** `src/app/data/service-areas.ts`
+- **Dynamic meta + JSON-LD:** `src/app/services/seo.ts`
+
+---
+
 ## Hosting & Infrastructure
 
 | Service | Purpose | Account |
@@ -90,19 +101,26 @@ Download URLs are configured in `src/app/components/catalogues/catalogues.ts`. T
 ```
 src/
 ├── app/
+│   ├── app.routes.ts       Routes: / and /locations/:citySlug
+│   ├── pages/
+│   │   └── home/           Main single-page layout (all sections)
 │   ├── components/
 │   │   ├── navbar/         Sticky navigation bar
 │   │   ├── hero/           Swiper carousel hero section
 │   │   ├── stats/          Animated stats counters
 │   │   ├── about/          Company overview + building photo
 │   │   ├── features/       "Why Choose Us" feature cards
+│   │   ├── service-areas/   City hubs + internal links (local SEO)
 │   │   ├── brands/         Partner brands marquee
 │   │   ├── catalogues/     PDF catalogue cards (view/download)
 │   │   ├── testimonials/   Google review showcase
 │   │   ├── contact/        Contact info + Google Maps embed
 │   │   └── footer/         Site footer
+│   ├── data/
+│   │   └── service-areas.ts   City slugs + unique copy for /locations/:slug
 │   └── services/
-│       └── scroll.ts       Smooth scroll navigation service
+│       ├── scroll.ts          Smooth scroll navigation
+│       └── seo.ts            Title, meta, canonical, JSON-LD per route
 ├── styles/
 │   ├── _variables.scss     Color palette, spacing, typography tokens
 │   ├── _mixins.scss        Responsive breakpoints, component mixins
