@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist/triputi-pharma/browser"
 
+# Browsers still request /favicon.ico; send them to the TP SVG (must be before SPA fallback).
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.svg"
+  status = 302
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
