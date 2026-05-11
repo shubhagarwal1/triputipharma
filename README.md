@@ -43,15 +43,27 @@ Built with Angular 21, SCSS, Swiper.js, and AOS.
 | A | `@` | `75.2.60.5` |
 | CNAME | `www` | `triputipharma.netlify.app` |
 
-### Deployment
+### Deployment (automated from `main`)
 
-Netlify builds and deploys automatically. To deploy manually:
+Pushes to **`main`** run **[`.github/workflows/deploy-netlify-production.yml`](.github/workflows/deploy-netlify-production.yml)**: `npm ci` → `npm run build` → Netlify **production** deploy.
+
+**One-time setup — GitHub repository secrets** (repo → **Settings** → **Secrets and variables** → **Actions**):
+
+| Secret | Where to get it |
+|--------|-----------------|
+| `NETLIFY_AUTH_TOKEN` | [Netlify](https://app.netlify.com/user/applications/personal) → **User settings** → **Applications** → **New access token** |
+| `NETLIFY_SITE_ID` | Netlify → **Site configuration** → **General** → **Site details** → **Site ID** (e.g. `5bd0f782-2fb2-40a7-9682-2b2a3865ba99`) |
+
+**Avoid double deploys:** If the site is also linked under Netlify **Build & deploy → Configure your build → Link repository**, Netlify will build *and* GitHub Actions will deploy — two deploys per push. Pick one:
+
+- **GitHub Actions only (this repo’s workflow):** In Netlify, **stop** linked-repo builds (unlink the repo or turn off automatic builds), and rely on the workflow.
+- **Netlify linked repo only:** Delete or disable `.github/workflows/deploy-netlify-production.yml` and use Netlify’s UI to connect GitHub.
+
+### Manual deploy (local CLI)
 
 ```bash
 netlify deploy --prod --dir=dist/triputi-pharma/browser
 ```
-
----
 
 ## Prerequisites
 
