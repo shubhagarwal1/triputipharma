@@ -56,7 +56,14 @@ Every push to **`main`** runs **[`.github/workflows/deploy-netlify-production.ym
 | `NETLIFY_AUTH_TOKEN` | [Netlify](https://app.netlify.com/user/applications/personal) → **User settings** → **Applications** → **New access token** |
 | `NETLIFY_SITE_ID` | Netlify → **Site configuration** → **General** → **Site details** → **Site ID** |
 
-After secrets are saved, trigger a deploy with a push to `main` or **Actions** → open the latest run → **Re-run all jobs**.
+After secrets are saved, trigger a deploy with a push to `main`, **Run workflow** on **Actions** (manual `workflow_dispatch`), or **Re-run all jobs** on the latest run.
+
+**Production still shows old content (e.g. old favicon or title)?** The live site is whatever Netlify last published. Quick checks:
+
+1. Open [Actions](https://github.com/shubhagarwal1/triputipharma/actions) — is **Deploy production (Netlify)** green for recent commits? If red, open the log (build error, missing secrets, or Netlify CLI error).
+2. **`NETLIFY_SITE_ID`** must be the **Site ID** of the Netlify site that has **triputipharma.com** attached (see **Site configuration → General**). If the token deploys a different site, the custom domain will not update.
+3. View HTML source on production: you should see `/favicon.svg` in `<link rel="icon" ...>` and a **new** `main-*.js` filename after a successful deploy. If you still see `favicon.ico` only, that bundle is **not** the latest `main` branch build.
+4. In Netlify → **Deploys**, confirm the latest production deploy time matches your GitHub push (or trigger **Clear cache and deploy site** after a good CI deploy if something looks stuck).
 
 **Avoid double deploys:** If the site is also linked under Netlify **Build & deploy → Link repository**, Netlify may build *and* GitHub Actions will deploy — two deploys per push. Prefer one:
 
