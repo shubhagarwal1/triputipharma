@@ -34,7 +34,7 @@ Built with Angular 21, SCSS, Swiper.js, and AOS.
 |---------|---------|---------|
 | **GoDaddy** | Domain registrar (`triputipharma.com`, expires May 2027) | dcc.godaddy.com |
 | **Netlify** | Static site hosting, SSL, CDN | app.netlify.com/projects/triputipharma |
-| **GitHub** | Source code + PDF hosting via Releases | github.com/shubhagarwal1/triputipharma |
+| **GitHub** | Source code + PDF hosting via Releases + **Actions → Netlify production** | github.com/shubhagarwal1/triputipharma |
 
 ### DNS Configuration (GoDaddy)
 
@@ -45,25 +45,31 @@ Built with Angular 21, SCSS, Swiper.js, and AOS.
 
 ### Deployment (automated from `main`)
 
-Pushes to **`main`** run **[`.github/workflows/deploy-netlify-production.yml`](.github/workflows/deploy-netlify-production.yml)**: `npm ci` → `npm run build` → Netlify **production** deploy.
+Every push to **`main`** runs **[`.github/workflows/deploy-netlify-production.yml`](.github/workflows/deploy-netlify-production.yml)**: `npm ci` → `npm run build` → Netlify **production** deploy (`netlify deploy --prod`).
 
-**One-time setup — GitHub repository secrets** (repo → **Settings** → **Secrets and variables** → **Actions**):
+**Monitor runs:** [github.com/shubhagarwal1/triputipharma/actions](https://github.com/shubhagarwal1/triputipharma/actions) → workflow **Deploy production (Netlify)**.
+
+**Secrets (repository scope, not Environment):** [Settings → Secrets and variables → Actions](https://github.com/shubhagarwal1/triputipharma/settings/secrets/actions) → under **Repository secrets**, add:
 
 | Secret | Where to get it |
 |--------|-----------------|
 | `NETLIFY_AUTH_TOKEN` | [Netlify](https://app.netlify.com/user/applications/personal) → **User settings** → **Applications** → **New access token** |
-| `NETLIFY_SITE_ID` | Netlify → **Site configuration** → **General** → **Site details** → **Site ID** (e.g. `5bd0f782-2fb2-40a7-9682-2b2a3865ba99`) |
+| `NETLIFY_SITE_ID` | Netlify → **Site configuration** → **General** → **Site details** → **Site ID** |
 
-**Avoid double deploys:** If the site is also linked under Netlify **Build & deploy → Configure your build → Link repository**, Netlify will build *and* GitHub Actions will deploy — two deploys per push. Pick one:
+After secrets are saved, trigger a deploy with a push to `main` or **Actions** → open the latest run → **Re-run all jobs**.
 
-- **GitHub Actions only (this repo’s workflow):** In Netlify, **stop** linked-repo builds (unlink the repo or turn off automatic builds), and rely on the workflow.
-- **Netlify linked repo only:** Delete or disable `.github/workflows/deploy-netlify-production.yml` and use Netlify’s UI to connect GitHub.
+**Avoid double deploys:** If the site is also linked under Netlify **Build & deploy → Link repository**, Netlify may build *and* GitHub Actions will deploy — two deploys per push. Prefer one:
+
+- **GitHub Actions only:** Unlink the repo in Netlify or disable automatic builds there.
+- **Netlify Git only:** Remove or disable `.github/workflows/deploy-netlify-production.yml`.
 
 ### Manual deploy (local CLI)
 
 ```bash
 netlify deploy --prod --dir=dist/triputi-pharma/browser
 ```
+
+---
 
 ## Prerequisites
 
