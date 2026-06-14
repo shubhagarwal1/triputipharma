@@ -8,7 +8,7 @@ import {
   getServiceAreaBySlug,
 } from '../data/service-areas';
 
-const OG_IMAGE = `${SITE_ORIGIN}/images/building.jpeg`;
+const OG_IMAGE = `${SITE_ORIGIN}/images/hero/distribution-network.jpg`;
 const JSON_LD_ID = 'triputi-jsonld-main';
 
 @Injectable({ providedIn: 'root' })
@@ -23,7 +23,7 @@ export class SeoService {
     const canonicalUrl = `${SITE_ORIGIN}${path}`;
 
     const pageTitle = area
-      ? `Pharmacy Wholesaler ${area.name} | Medicine Distributor | Triputi Pharma`
+      ? `Pharmaceutical Distribution Partner in ${area.name} | Triputi Pharma`
       : DEFAULT_META.title;
 
     const pageDescription = area
@@ -53,8 +53,8 @@ export class SeoService {
     this.meta.updateTag({
       name: 'keywords',
       content: area
-        ? `pharmacy wholesaler ${area.name}, medicine distributor ${area.name}, pharmaceutical distributor Haryana, Triputi Pharma, bulk medicines ${area.name}, KASDAP, PCI, Gurugram wholesaler`
-        : 'Triputi Pharma, pharmaceutical wholesaler Gurugram, medicine distributor Haryana, pharmacy wholesale NCR, Basai Industrial Area, KASDAP, PCI, pharmaceutical distributor',
+        ? `pharmaceutical distribution partner ${area.name}, medicine distribution ${area.name}, healthcare distribution network Haryana, Triputi Pharma, pharmaceutical distribution services ${area.name}, pharma marketing company`
+        : 'Triputi Pharma, pharmaceutical distribution partner, pharma marketing company Gurugram, healthcare distribution network Haryana, medicine distribution Delhi NCR Rajasthan Gujarat, pharmaceutical distribution services, Sector 39 Gurugram',
     });
 
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
@@ -62,7 +62,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:image', content: OG_IMAGE });
-    this.meta.updateTag({ property: 'og:image:alt', content: 'Triputi Pharma building, Basai Industrial Area Gurugram' });
+    this.meta.updateTag({ property: 'og:image:alt', content: 'Triputi Pharma — pharmaceutical distribution partner' });
     this.meta.updateTag({ property: 'og:site_name', content: 'Triputi Pharma' });
     this.meta.updateTag({ property: 'og:locale', content: 'en_IN' });
 
@@ -103,16 +103,21 @@ export class SeoService {
         url: SITE_ORIGIN,
         logo: `${SITE_ORIGIN}/favicon.svg`,
         image: OG_IMAGE,
-        telephone: '+91-9717073873',
+        telephone: '+91-9416608873',
         description: DEFAULT_META.description,
         address: {
           '@type': 'PostalAddress',
           streetAddress:
-            'Plot No.3, Gali No.1, Khasra No.511/1, Basai Industrial Area, Near RK Hotel Residency, Ward No.12, Basai',
+            'Basement, Patanjali Mega Store, Near Raas Wellness Spa, Jharsa, Sector 39',
           addressLocality: 'Gurugram',
           addressRegion: 'Haryana',
-          postalCode: '122006',
+          postalCode: '122003',
           addressCountry: 'IN',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 28.4380889,
+          longitude: 77.0519923,
         },
         areaServed,
         sameAs: [
@@ -131,20 +136,25 @@ export class SeoService {
       {
         '@type': 'MedicalBusiness',
         '@id': `${SITE_ORIGIN}/#medicalbusiness`,
-        name: 'Triputi Pharma — Pharmaceutical Wholesale',
+        name: 'Triputi Pharma — Pharmaceutical Marketing & Distribution',
         image: OG_IMAGE,
         url: SITE_ORIGIN,
-        telephone: '+91-9717073873',
+        telephone: '+91-9416608873',
         address: {
           '@type': 'PostalAddress',
           streetAddress:
-            'Plot No.3, Gali No.1, Basai Industrial Area, Near RK Hotel Residency, Basai',
+            'Basement, Patanjali Mega Store, Near Raas Wellness Spa, Jharsa, Sector 39',
           addressLocality: 'Gurugram',
           addressRegion: 'Haryana',
-          postalCode: '122006',
+          postalCode: '122003',
           addressCountry: 'IN',
         },
-        priceRange: 'Wholesale / B2B',
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 28.4380889,
+          longitude: 77.0519923,
+        },
+        priceRange: '₹₹',
       },
     ];
 
@@ -153,7 +163,7 @@ export class SeoService {
         '@type': 'WebPage',
         '@id': `${SITE_ORIGIN}/locations/${area.slug}#webpage`,
         url: `${SITE_ORIGIN}/locations/${area.slug}`,
-        name: `Pharmacy wholesaler and medicine distributor — ${area.name}`,
+        name: `Pharmaceutical marketing and distribution partner — ${area.name}`,
         description: `${area.headline}. ${area.localBlurb}`,
         isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
         about: {

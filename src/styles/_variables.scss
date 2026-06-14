@@ -1,21 +1,26 @@
 // === COLOR PALETTE ===
-$primary: #0F766E;
+// Modern medical identity: deep teal primary, fresh mint support, ink-blue darks.
+$primary: #0D9488;
 $primary-light: #CCFBF1;
 $primary-dark: #0A5C56;
 $primary-50: #F0FDFA;
-$accent: #D97706;
+$accent: #F59E0B;
 $accent-light: #FEF3C7;
 $accent-dark: #B45309;
-$surface: #FAFAF9;
+$surface: #F7FAFB;
 $card: #FFFFFF;
-$text-primary: #0F172A;
+$text-primary: #0B1220;
 $text-secondary: #475569;
 $text-light: #94A3B8;
-$divider: #E2E8F0;
-$dark-bg: #0F172A;
-$dark-surface: #1E293B;
+$divider: #E5EBF0;
+$dark-bg: #0B1220;
+$dark-surface: #121C30;
 $success: #10B981;
 $whatsapp: #25D366;
+
+// === GRADIENTS ===
+$gradient-primary: linear-gradient(135deg, #0D9488 0%, #0A5C56 100%);
+$gradient-ink: linear-gradient(160deg, #0B1220 0%, #0E1A30 100%);
 
 // === TYPOGRAPHY ===
 $font-heading: 'Plus Jakarta Sans', sans-serif;

@@ -12,6 +12,7 @@ import AOS from 'aos';
 import { Navbar } from '../../components/navbar/navbar';
 import { Hero } from '../../components/hero/hero';
 import { Stats } from '../../components/stats/stats';
+import { Showcase } from '../../components/showcase/showcase';
 import { About } from '../../components/about/about';
 import { Features } from '../../components/features/features';
 import { ServiceAreas } from '../../components/service-areas/service-areas';
@@ -34,6 +35,7 @@ import {
     Navbar,
     Hero,
     Stats,
+    Showcase,
     About,
     Features,
     ServiceAreas,

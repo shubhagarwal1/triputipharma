@@ -7,6 +7,17 @@
   height: 100dvh;
   min-height: 600px;
   max-height: 1000px;
+  background: $dark-bg; // shows behind the stage as it recedes on scroll
+
+  // Transformable banner layer — scaled / blurred / faded on scroll for a modern reveal.
+  &__stage {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    transform-origin: 50% 35%;
+    backface-visibility: hidden;
+    will-change: transform, opacity, filter;
+  }
 
   swiper-container {
     width: 100%;
@@ -23,46 +34,30 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    // Top-align so tall content never centers up under the fixed navbar; it clears via padding.
+    align-items: flex-start;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    &.slide-1 {
-      background-image: url('/images/building.jpeg');
-    }
-
-    &.slide-2 {
-      background: linear-gradient(135deg, #0F766E 0%, #134E4A 40%, #0A5C56 100%);
-    }
-
-    &.slide-3 {
-      background: linear-gradient(135deg, #1E293B 0%, #0F172A 50%, #1E3A5F 100%);
-    }
-
-    &.slide-4 {
-      background: linear-gradient(135deg, #7C2D12 0%, #9A3412 40%, #B45309 100%);
-    }
+    &.slide-1 { background-image: url('/images/hero/distribution-network.jpg'); }
+    &.slide-2 { background-image: url('/images/hero/product-range.jpg'); }
+    &.slide-3 { background-image: url('/images/hero/supply-scale.jpg'); }
+    &.slide-4 { background-image: url('/images/hero/stock-availability.jpg'); }
   }
 
   &__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba($dark-bg, 0.3) 0%,
-      rgba($dark-bg, 0.5) 50%,
-      rgba($dark-bg, 0.8) 100%
-    );
     z-index: 1;
+    // Brand-tinted scrim: clinical teal anchors the text side, deepening to ink at the base for legibility.
+    background:
+      linear-gradient(100deg, rgba(#0A5C56, 0.94) 0%, rgba($dark-bg, 0.80) 40%, rgba($dark-bg, 0.30) 100%),
+      linear-gradient(180deg, rgba($dark-bg, 0.10) 0%, rgba($dark-bg, 0.35) 55%, rgba($dark-bg, 0.85) 100%);
 
-    .slide-1 & {
-      background: linear-gradient(
-        180deg,
-        rgba($dark-bg, 0.2) 0%,
-        rgba($dark-bg, 0.45) 40%,
-        rgba($dark-bg, 0.8) 100%
-      );
+    @media (max-width: 767px) {
+      background:
+        linear-gradient(180deg, rgba(#0A5C56, 0.78) 0%, rgba($dark-bg, 0.72) 45%, rgba($dark-bg, 0.88) 100%);
     }
   }
 
@@ -70,11 +65,18 @@
     position: relative;
     z-index: $z-hero-content;
     @include container;
-    padding-top: 80px;
+    // Clear the fixed navbar (~72px) on every viewport so the badge never overlaps it.
+    padding-top: 108px;
+    padding-bottom: 56px;
+
+    @include tablet {
+      padding-top: 124px;
+    }
 
     @include desktop {
       max-width: 720px;
       margin: 0;
+      padding-top: 96px;
       padding-left: max(40px, calc((100vw - #{$container-max}) / 2 + 40px));
     }
   }
@@ -82,35 +84,49 @@
   &__badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     padding: 8px 16px;
     background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     backdrop-filter: blur(8px);
     border-radius: $radius-full;
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
     font-family: $font-heading;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.04em;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
+
+    svg { color: $accent-light; }
+  }
+
+  &__eyebrow {
+    display: block;
+    font-family: $font-heading;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $primary-light;
+    margin-bottom: 14px;
   }
 
   &__title {
     font-family: $font-heading;
-    font-size: 2.5rem;
+    font-size: clamp(1.85rem, 7vw, 2.4rem);
     font-weight: 800;
     color: #fff;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    text-wrap: balance;
 
     @include tablet {
-      font-size: 3.25rem;
+      font-size: 3.1rem;
     }
 
     @include desktop {
-      font-size: 3.75rem;
+      font-size: 3.6rem;
     }
   }
 
@@ -149,11 +165,11 @@
     align-items: center;
     gap: 8px;
     padding: 14px 28px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.92);
     font-family: $font-heading;
     font-size: 0.95rem;
     font-weight: 600;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: $radius-full;
     transition: all $transition-base;
     cursor: pointer;
@@ -161,7 +177,44 @@
     &:hover {
       border-color: #fff;
       color: #fff;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 26px;
+    margin-top: 34px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      font-family: $font-body;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.72);
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: -14px;
+        top: 50%;
+        width: 1px;
+        height: 16px;
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-50%);
+      }
+
+      strong {
+        font-family: $font-heading;
+        font-weight: 800;
+        font-size: 1.05rem;
+        color: #fff;
+        margin-right: 4px;
+      }
     }
   }
 
@@ -180,51 +233,61 @@
     }
   }
 
-  // === SCROLL INDICATOR ===
-  &__scroll-indicator {
+  // === MODERN SCROLL CUE ===
+  &__scroll-cue {
     position: absolute;
-    bottom: 32px;
+    bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    background: none;
+    border: 0;
     cursor: pointer;
-    animation: float 3s ease-in-out infinite;
 
     @include tablet {
       display: flex;
     }
 
-    span {
+    &-text {
       font-family: $font-heading;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.55);
+      transition: color $transition-base;
     }
-  }
 
-  &__scroll-mouse {
-    width: 24px;
-    height: 38px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
-  }
+    // thin vertical track with a travelling highlight
+    &-line {
+      position: relative;
+      width: 1px;
+      height: 46px;
+      background: rgba(255, 255, 255, 0.22);
+      overflow: hidden;
 
-  &__scroll-wheel {
-    width: 3px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    animation: pulse 2s ease-in-out infinite;
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(180deg, transparent, #fff);
+        animation: scrollCue 1.8s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+      }
+    }
+
+    &:hover &-text { color: #fff; }
   }
+}
+
+@keyframes scrollCue {
+  0% { transform: translateY(-110%); }
+  100% { transform: translateY(260%); }
 }
 
 // Swiper pagination bullets (global because shadow DOM)

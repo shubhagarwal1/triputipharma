@@ -15,165 +15,179 @@ export const SITE_ORIGIN = 'https://triputipharma.com';
 
 export const DEFAULT_META = {
   title:
-    'Triputi Pharma | Wholesale Medicine & Pharmaceutical Distributor — Gurugram',
+    'Triputi Pharma | Pharmaceutical Marketing & Distribution Partner — Haryana, Delhi NCR, Rajasthan & Gujarat',
   description:
-    'Triputi Pharma is a pharmaceutical wholesaler in Basai Industrial Area, Gurugram. Bulk medicines, KASDAP & PCI catalogues, competitive rates for pharmacies, clinics, and hospitals across Haryana and NCR.',
+    'Triputi Pharma is a trusted pharmaceutical marketing and distribution partner in Sector 39, Gurugram. 2000+ products and reliable supply for pharmacies, hospitals, clinics, and healthcare institutions across Haryana, Delhi NCR, Rajasthan, and Gujarat.',
 };
 
 export const SERVICE_AREAS: ServiceArea[] = [
   {
     slug: 'sirsa',
     name: 'Sirsa',
-    headline: 'Pharma wholesaler supply for Sirsa & district',
+    headline: 'Pharmaceutical distribution partner for Sirsa & district',
     localBlurb:
-      'Pharmacies and stockists in Sirsa rely on consistent availability of generics and branded lines. Triputi Pharma supports Sirsa with wholesale pricing, catalogue-backed ordering, and dependable replenishment from our Gurugram distribution base.',
+      'Pharmacies and healthcare providers in Sirsa rely on consistent availability of generics and branded lines. Triputi Pharma supports Sirsa with catalogue-backed ordering and dependable replenishment from our Gurugram distribution base.',
   },
   {
     slug: 'gurugram',
     name: 'Gurugram',
-    headline: 'Basai Industrial Area — our home hub',
+    headline: 'Sector 39, Jharsa — our home hub',
     localBlurb:
-      'From Plot No.3, Basai Industrial Area, we serve Gurugram pharmacies, polyclinics, and hospitals with fast turnaround on high-demand molecules and full catalogue coverage.',
+      'From our Sector 39 (Jharsa) hub, we serve Gurugram pharmacies, polyclinics, and hospitals with fast turnaround on high-demand molecules and full catalogue coverage.',
   },
   {
     slug: 'faridabad',
     name: 'Faridabad',
-    headline: 'Bulk medicines for Faridabad retailers & clinics',
+    headline: 'Reliable medicine supply for Faridabad pharmacies & clinics',
     localBlurb:
-      'Faridabad healthcare retailers can source PCI, KASDAP Healthcare, and KASDAP Genexx ranges in bulk. We focus on price stability and availability for NCR corridors.',
+      'Faridabad pharmacies, clinics, and hospitals can source our trusted brand portfolio with dependable availability. We focus on stock consistency and timely delivery across the NCR corridor.',
   },
   {
     slug: 'sonipat',
     name: 'Sonipat',
-    headline: 'Wholesale pharmaceutical partner for Sonipat',
+    headline: 'Pharmaceutical distribution partner for Sonipat',
     localBlurb:
-      'Sonipat distributors and counters benefit from structured catalogue ordering and transparent wholesale terms tied to our Gurugram warehouse operations.',
+      'Sonipat pharmacies and healthcare counters benefit from structured catalogue ordering and transparent terms tied to our Gurugram distribution operations.',
   },
   {
     slug: 'panipat',
     name: 'Panipat',
     headline: 'Medicine supply chain for Panipat pharmacies',
     localBlurb:
-      'Panipat medical stores seeking reliable bulk supply can use our downloadable product books and brand-wise PDFs to plan purchases and restock efficiently.',
+      'Panipat medical stores seeking reliable supply can use our downloadable product books and brand-wise PDFs to plan purchases and restock efficiently.',
   },
   {
     slug: 'karnal',
     name: 'Karnal',
-    headline: 'Pharma distribution support for Karnal',
+    headline: 'Pharmaceutical distribution support for Karnal',
     localBlurb:
-      'Karnal healthcare businesses looking for a Gurugram-linked wholesaler get access to the same catalogues and price lists used across our Haryana wholesale network.',
+      'Karnal healthcare providers connected to our Gurugram hub get access to the same catalogues and product range used across our distribution network.',
   },
   {
     slug: 'rohtak',
     name: 'Rohtak',
-    headline: 'Rohtak — catalogue-first wholesale medicines',
+    headline: 'Rohtak — catalogue-first pharmaceutical supply',
     localBlurb:
-      'Rohtak retailers can browse PCI and KASDAP lines online before calling or WhatsApping orders, reducing mismatches on strength, pack, and schedule.',
+      'Pharmacies in Rohtak can browse our brand lines online before calling or WhatsApping orders, reducing mismatches on strength, pack, and schedule.',
   },
   {
     slug: 'hisar',
     name: 'Hisar',
-    headline: 'Hisar pharmacies & wholesale medicine sourcing',
+    headline: 'Hisar pharmacies & dependable medicine sourcing',
     localBlurb:
-      'For Hisar, we emphasise predictable fulfilment on high-rotation SKUs and help counters match patient demand with our wide formulation portfolio.',
+      'For Hisar, we emphasise predictable fulfilment on high-rotation SKUs and help healthcare counters match patient demand with our wide formulation portfolio.',
   },
   {
     slug: 'bhiwani',
     name: 'Bhiwani',
-    headline: 'Wholesale partner for Bhiwani medical trade',
+    headline: 'Distribution partner for the Bhiwani medical trade',
     localBlurb:
-      'Bhiwani stockists gain a single Gurugram-based partner for multiple manufacturer lines, simplifying reconciliation and invoice trails.',
+      'Bhiwani pharmacies gain a single Gurugram-based partner for multiple brand lines, simplifying reconciliation and invoice trails.',
   },
   {
     slug: 'rewari',
     name: 'Rewari',
-    headline: 'Medicine wholesaler routes covering Rewari',
+    headline: 'Medicine distribution routes covering Rewari',
     localBlurb:
-      'Rewari is within our NCR and Haryana service pattern; enquire for route days, MOQ guidance, and catalogue segments relevant to your store mix.',
+      'Rewari is within our NCR and Haryana service pattern; enquire for route days, order guidance, and catalogue segments relevant to your store mix.',
   },
   {
     slug: 'jhajjar',
     name: 'Jhajjar',
-    headline: 'Jhajjar clinics & retailers — bulk pharma supply',
+    headline: 'Jhajjar clinics & pharmacies — reliable pharma supply',
     localBlurb:
-      'Jhajjar healthcare sellers can align with our Basai hub for consolidated wholesale orders instead of juggling multiple partial suppliers.',
+      'Jhajjar healthcare providers can align with our Gurugram hub for consolidated orders instead of juggling multiple partial suppliers.',
   },
   {
     slug: 'bahadurgarh',
     name: 'Bahadurgarh',
-    headline: 'Bahadurgarh wholesale medicines from Gurugram',
+    headline: 'Bahadurgarh pharmaceutical supply from Gurugram',
     localBlurb:
       'Proximity to Delhi NCR makes Bahadurgarh a natural fit for our logistics; ask about fast-moving lists and cold-chain expectations where applicable.',
   },
   {
     slug: 'ambala',
     name: 'Ambala',
-    headline: 'Ambala pharmaceutical wholesale enquiries',
+    headline: 'Ambala pharmaceutical distribution enquiries',
     localBlurb:
-      'Ambala retailers exploring a Gurugram wholesaler can review our PDF catalogues first, then confirm availability and pricing for their basket.',
+      'Ambala pharmacies exploring a Gurugram-based distribution partner can review our PDF catalogues first, then confirm availability and pricing for their basket.',
   },
   {
     slug: 'yamunanagar',
     name: 'Yamunanagar',
-    headline: 'Yamunanagar medicine wholesale support',
+    headline: 'Yamunanagar medicine distribution support',
     localBlurb:
-      'Yamunanagar shops benefit from our structured brand-wise PDFs and consolidated invoicing on multi-line orders placed through phone or WhatsApp.',
+      'Yamunanagar pharmacies benefit from our structured brand-wise PDFs and consolidated invoicing on multi-line orders placed by phone or WhatsApp.',
   },
   {
     slug: 'kurukshetra',
     name: 'Kurukshetra',
     headline: 'Kurukshetra pharma trade — catalogue downloads',
     localBlurb:
-      'Kurukshetra counters can preload ordering decisions using our online catalogues, then confirm dispatch timelines with our Gurugram desk.',
+      'Kurukshetra healthcare counters can preload ordering decisions using our online catalogues, then confirm dispatch timelines with our Gurugram desk.',
   },
   {
     slug: 'kaithal',
     name: 'Kaithal',
-    headline: 'Kaithal wholesale medicine sourcing',
+    headline: 'Kaithal pharmaceutical sourcing',
     localBlurb:
-      'Kaithal healthcare businesses receive the same transparent catalogue access as larger cities, with guidance on pack configuration and schedule placement.',
+      'Kaithal healthcare providers receive the same transparent catalogue access as larger cities, with guidance on pack configuration and schedule placement.',
   },
   {
     slug: 'jind',
     name: 'Jind',
-    headline: 'Jind pharmacies — bulk supply partner',
+    headline: 'Jind pharmacies — dependable supply partner',
     localBlurb:
-      'Jind retailers mapping seasonal demand spikes can use our product book snapshots alongside brand PDFs to secure depth on critical SKUs.',
+      'Jind pharmacies mapping seasonal demand spikes can use our product book snapshots alongside brand PDFs to secure depth on critical SKUs.',
   },
   {
     slug: 'fatehabad',
     name: 'Fatehabad',
-    headline: 'Fatehabad medicine wholesaler connectivity',
+    headline: 'Fatehabad medicine distribution connectivity',
     localBlurb:
-      'Fatehabad stockists connect to our Gurugram warehouse for scheduled fulfilment and documentation suitable for trade compliance routines.',
+      'Fatehabad pharmacies connect to our Gurugram warehouse for scheduled fulfilment and documentation suitable for trade compliance routines.',
   },
   {
     slug: 'noida',
     name: 'Noida',
-    headline: 'Noida — NCR pharmaceutical wholesale',
+    headline: 'Noida — NCR pharmaceutical distribution',
     localBlurb:
-      'Noida clinics and retailers sourcing from Haryana wholesalers can review KASDAP and PCI PDFs online and coordinate fulfilment with our Basai team.',
+      'Noida clinics and pharmacies sourcing from Haryana can review our brand PDFs online and coordinate fulfilment with our Gurugram team.',
   },
   {
     slug: 'delhi',
     name: 'Delhi',
-    headline: 'Delhi NCR wholesale medicine enquiries',
+    headline: 'Delhi NCR pharmaceutical distribution enquiries',
     localBlurb:
-      'Delhi buyers evaluating Gurugram-based distributors can download catalogues, compare lines, and discuss route economics before placing trial wholesale orders.',
+      'Delhi buyers evaluating Gurugram-based distribution partners can download catalogues, compare lines, and discuss route economics before placing trial orders.',
   },
   {
     slug: 'palwal',
     name: 'Palwal',
-    headline: 'Palwal bulk pharma supply from Gurugram',
+    headline: 'Palwal pharmaceutical supply from Gurugram',
     localBlurb:
-      'Palwal healthcare sellers gain access to consolidated brand ranges and printable catalogue references for counter staff training and ordering.',
+      'Palwal healthcare providers gain access to consolidated brand ranges and printable catalogue references for counter staff training and ordering.',
   },
   {
     slug: 'mahendragarh',
     name: 'Mahendragarh',
-    headline: 'Mahendragarh wholesale pharmaceutical support',
+    headline: 'Mahendragarh pharmaceutical distribution support',
     localBlurb:
-      'Mahendragarh retailers can reduce stock-outs by aligning with a wholesaler that publishes full PDF catalogues and supports WhatsApp-led order clarifications.',
+      'Mahendragarh pharmacies can reduce stock-outs by aligning with a distribution partner that publishes full PDF catalogues and supports WhatsApp-led order clarifications.',
+  },
+  {
+    slug: 'nuh',
+    name: 'Nuh',
+    headline: 'Nuh (Mewat) pharmaceutical distribution support',
+    localBlurb:
+      'Pharmacies and clinics in Nuh (Mewat) can rely on our Gurugram hub for steady availability of essential medicines, catalogue-backed ordering, and responsive support across the district.',
+  },
+  {
+    slug: 'charkhi-dadri',
+    name: 'Charkhi Dadri',
+    headline: 'Charkhi Dadri pharmaceutical supply partner',
+    localBlurb:
+      'Charkhi Dadri healthcare providers connect with our distribution network for consistent stock of high-demand lines, transparent ordering, and dependable replenishment from Gurugram.',
   },
 ];
 

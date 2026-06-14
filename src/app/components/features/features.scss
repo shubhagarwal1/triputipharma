@@ -28,33 +28,48 @@
     margin: 0 auto;
   }
 
+  // === BENTO GRID ===
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
 
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    @include desktop {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
   }
 
   &__card {
-    padding: 32px 24px;
-    background: $surface;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 24px;
+    background: $card;
     border-radius: $radius-lg;
     border: 1px solid $divider;
-    transition: all $transition-base;
+    overflow: hidden;
+    transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+    will-change: transform;
+
+    // subtle dotted texture that fades in on hover (bento signature)
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at center, rgba($primary, 0.06) 1px, transparent 1px);
+      background-size: 16px 16px;
+      opacity: 0;
+      transition: opacity $transition-base;
+      pointer-events: none;
+    }
 
     &:hover {
-      border-color: $primary;
+      border-color: rgba($primary, 0.4);
       box-shadow: $shadow-md;
-      transform: translateY(-6px);
+      transform: translateY(-4px);
+
+      &::before { opacity: 1; }
 
       .features__card-icon {
         background: $primary;
@@ -62,33 +77,89 @@
       }
     }
 
-    @include desktop {
-      padding: 36px 28px;
+    // anchor card carries the highlight permanently
+    &--persistent {
+      background: linear-gradient(150deg, $primary-50 0%, $card 60%);
+      border-color: rgba($primary, 0.3);
+
+      &::before { opacity: 1; }
+    }
+
+    @include tablet {
+      &--wide { grid-column: span 2; }
     }
   }
 
+  &__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
   &__card-icon {
-    width: 56px;
-    height: 56px;
+    width: 46px;
+    height: 46px;
     @include flex-center;
     background: $primary-50;
     color: $primary;
-    border-radius: $radius-lg;
-    margin-bottom: 20px;
+    border-radius: $radius-md;
     transition: all $transition-base;
+  }
+
+  &__card-status {
+    font-family: $font-heading;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $primary-dark;
+    background: rgba($primary, 0.08);
+    border-radius: $radius-full;
+    padding: 5px 11px;
   }
 
   &__card-title {
     font-family: $font-heading;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     font-weight: 700;
     color: $text-primary;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
+  }
+
+  &__card-meta {
+    font-family: $font-body;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: $text-light;
+    margin-left: 8px;
   }
 
   &__card-desc {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: $text-secondary;
-    line-height: 1.65;
+    line-height: 1.62;
+  }
+
+  &__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 18px;
+  }
+
+  &__card-tag {
+    font-family: $font-body;
+    font-size: 0.72rem;
+    color: $text-secondary;
+    background: rgba($text-primary, 0.04);
+    border-radius: $radius-sm;
+    padding: 4px 9px;
+    transition: background $transition-fast;
+
+    .features__card:hover & {
+      background: rgba($primary, 0.1);
+    }
   }
 }

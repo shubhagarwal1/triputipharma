@@ -9,8 +9,8 @@ export class About {
   highlights = [
     {
       icon: 'truck',
-      title: 'Wholesale Distribution',
-      desc: 'Bulk supply to pharmacies, hospitals & clinics',
+      title: 'Distribution Network',
+      desc: 'Reliable supply to pharmacies, hospitals & clinics',
     },
     {
       icon: 'shield',
@@ -19,8 +19,8 @@ export class About {
     },
     {
       icon: 'globe',
-      title: 'Pan-India Brands',
-      desc: 'Products from leading Indian manufacturers',
+      title: 'Trusted Brands',
+      desc: 'A curated portfolio of established healthcare brands',
     },
   ];
 }

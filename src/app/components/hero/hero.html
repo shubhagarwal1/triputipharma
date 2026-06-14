@@ -1,4 +1,5 @@
 <section class="hero" id="hero">
+  <div class="hero__stage" #stage>
   <swiper-container #swiperEl init="false">
     @for (slide of slides; track slide.bgClass) {
       <swiper-slide>
@@ -6,9 +7,10 @@
           <div class="hero__overlay"></div>
           <div class="hero__content">
             <span class="hero__badge">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Trusted Since 2015
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              13+ Years of Trusted Distribution
             </span>
+            <span class="hero__eyebrow">{{ slide.eyebrow }}</span>
             @if (demoteHeading()) {
               <h2 class="hero__title">{{ slide.title }}</h2>
             } @else {
@@ -20,24 +22,28 @@
                 {{ slide.cta }}
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
-              <a class="hero__cta-secondary" href="tel:+919717073873">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                Contact Us
+              <a class="hero__cta-secondary" [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                Talk to Our Team
               </a>
             </div>
+            <ul class="hero__trust">
+              <li><strong>2000+</strong> Products</li>
+              <li><strong>8+</strong> Partner Brands</li>
+              <li><strong>4</strong> States Covered</li>
+            </ul>
           </div>
         </div>
       </swiper-slide>
     }
   </swiper-container>
+  </div>
 
   <div class="hero-pagination"></div>
 
-  <!-- Scroll indicator -->
-  <div class="hero__scroll-indicator" (click)="navigateTo('stats')">
-    <div class="hero__scroll-mouse">
-      <div class="hero__scroll-wheel"></div>
-    </div>
-    <span>Scroll Down</span>
-  </div>
+  <!-- Modern scroll cue -->
+  <button class="hero__scroll-cue" type="button" (click)="navigateTo('stats')" aria-label="Scroll to content">
+    <span class="hero__scroll-cue-text">Scroll</span>
+    <span class="hero__scroll-cue-line"><span></span></span>
+  </button>
 </section>

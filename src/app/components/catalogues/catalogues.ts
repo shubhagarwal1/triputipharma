@@ -21,54 +21,54 @@ const RELEASE_BASE =
 export class Catalogues {
   catalogues: Catalogue[] = [
     {
-      title: 'Complete Product Book',
+      title: 'Troikaa (Novogen)',
       description:
-        'Our comprehensive product catalogue featuring 500+ pharmaceutical products across all therapeutic categories.',
+        'The complete Troikaa (Novogen) product book — 2000+ pharmaceutical products across all therapeutic categories.',
       url: `${RELEASE_BASE}/17.10.25.Product.BOOK_AUG-2025_C2c.1.pdf`,
       fileSize: '376 MB',
-      pages: '120 pages',
+      pages: 'Complete Product Book',
       gradient: 'linear-gradient(135deg, #0F766E, #134E4A)',
-      brand: 'Triputi Pharma',
+      brand: 'Troikaa (Novogen)',
     },
     {
-      title: 'Product Catalogue — Highlights',
+      title: 'Syndicate Medicare',
       description:
-        'A quick visual guide to our most popular products and best sellers with high-resolution imagery.',
+        'A quick visual guide to popular Syndicate Medicare products and best sellers, with high-resolution imagery.',
       url: `${RELEASE_BASE}/Catlouge.6.Pics.pdf`,
       fileSize: '13 MB',
       pages: 'Visual Guide',
-      gradient: 'linear-gradient(135deg, #D97706, #B45309)',
-      brand: 'Triputi Pharma',
+      gradient: 'linear-gradient(135deg, #1E40AF, #1E3A8A)',
+      brand: 'Syndicate Medicare',
     },
     {
-      title: 'KASDAP Genexx Catalogue',
+      title: 'Sunlife',
       description:
-        'Complete product range from KASDAP Genexx — advanced pharmaceutical formulations for modern healthcare.',
+        'The complete Sunlife range — quality formulations for everyday and specialised healthcare needs.',
       url: `${RELEASE_BASE}/KASDAP.GENEXX.CATALOGUE.2.pdf`,
       fileSize: '145 MB',
       pages: 'Full Range',
-      gradient: 'linear-gradient(135deg, #1E40AF, #1E3A8A)',
-      brand: 'KASDAP Genexx',
+      gradient: 'linear-gradient(135deg, #DC2626, #B91C1C)',
+      brand: 'Sunlife',
     },
     {
-      title: 'KASDAP Healthcare Catalogue',
+      title: 'Microlife',
       description:
-        'KASDAP Healthcare\'s complete portfolio of pharmaceutical and wellness products.',
+        'The Microlife portfolio of pharmaceutical and wellness products, available through our distribution network.',
       url: `${RELEASE_BASE}/KASDAP-HEALTHCARE.CATALOGUE.pdf`,
       fileSize: '82 MB',
       pages: 'Full Range',
-      gradient: 'linear-gradient(135deg, #7C3AED, #6D28D9)',
-      brand: 'KASDAP Healthcare',
+      gradient: 'linear-gradient(135deg, #0891B2, #0E7490)',
+      brand: 'Microlife',
     },
     {
-      title: 'PCI Product Catalogue',
+      title: 'Synthokind',
       description:
-        'Latest product catalogue from PCI featuring their complete range of pharmaceutical products.',
+        'The latest Synthokind catalogue featuring their complete range of pharmaceutical products.',
       url: `${RELEASE_BASE}/PCI.Product.Catalogue.New.DT.06.05.26.pdf`,
       fileSize: '191 MB',
       pages: 'Latest Edition',
-      gradient: 'linear-gradient(135deg, #DC2626, #B91C1C)',
-      brand: 'PCI Pharma',
+      gradient: 'linear-gradient(135deg, #7C3AED, #6D28D9)',
+      brand: 'Synthokind',
     },
   ];
 

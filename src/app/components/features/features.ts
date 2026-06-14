@@ -3,7 +3,14 @@ import { Component } from '@angular/core';
 interface Feature {
   icon: string;
   title: string;
+  meta?: string;
   description: string;
+  tags?: string[];
+  status?: string;
+  /** Spans two columns on desktop for an editorial bento rhythm. */
+  wide?: boolean;
+  /** Keeps the highlight treatment always on (anchor card). */
+  persistentHover?: boolean;
 }
 
 @Component({
@@ -16,26 +23,40 @@ export class Features {
     {
       icon: 'layers',
       title: 'Wide Product Range',
+      meta: '2000+ products',
       description:
-        '500+ pharmaceutical products spanning multiple therapeutic categories — from general medicine to specialized formulations.',
+        '2000+ pharmaceutical products spanning every major therapeutic category — from everyday medicine to specialised formulations.',
+      tags: ['Therapeutics', 'Wellness'],
+      status: 'Core',
+      wide: true,
+      persistentHover: true,
     },
     {
       icon: 'award',
-      title: 'Trusted Brands',
+      title: 'Trusted Brand Portfolio',
+      meta: '8+ brands',
       description:
-        'Authorized distributor of KASDAP Healthcare, KASDAP Genexx, PCI, and other reputed Indian pharmaceutical manufacturers.',
+        'Distribution partner for Troikaa (Novogen), Syndicate Medicare, Synthokind, Sunlife, Microlife, and more.',
+      tags: ['Quality'],
+      status: 'Verified',
     },
     {
       icon: 'tag',
-      title: 'Competitive Pricing',
+      title: 'Service-Led Partnership',
       description:
-        'Best wholesale rates in the market, enabling pharmacies and hospitals to maintain healthy margins on quality products.',
+        'Transparent pricing, responsive support, and catalogue-backed ordering that helps healthcare providers plan with confidence.',
+      tags: ['Support'],
+      status: 'Active',
     },
     {
       icon: 'zap',
       title: 'Reliable Supply Chain',
+      meta: '4 states',
       description:
-        'Consistent stock availability and timely delivery across Gurugram, NCR, and Haryana — your supply never stops.',
+        'Consistent stock availability and timely delivery across Gurugram, Delhi NCR, Haryana, Rajasthan, and Gujarat — ensuring uninterrupted pharmaceutical supply for healthcare providers.',
+      tags: ['Logistics', 'Coverage'],
+      status: 'Always On',
+      wide: true,
     },
   ];
 }

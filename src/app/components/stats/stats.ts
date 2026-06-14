@@ -26,10 +26,10 @@ export class Stats implements AfterViewInit, OnDestroy {
   private hasAnimated = false;
 
   stats: StatItem[] = [
-    { value: 500, suffix: '+', label: 'Products Available', icon: 'package' },
-    { value: 5, suffix: '+', label: 'Partner Brands', icon: 'award' },
+    { value: 2000, suffix: '+', label: 'Products Available', icon: 'package' },
+    { value: 8, suffix: '+', label: 'Partner Brands', icon: 'award' },
     { value: 5, suffix: '.0', label: 'Google Rating', icon: 'star' },
-    { value: 10, suffix: '+', label: 'Years Experience', icon: 'clock' },
+    { value: 13, suffix: '+', label: 'Years of Experience', icon: 'clock' },
   ];
 
   displayValues = signal<string[]>(this.stats.map(() => '0'));

@@ -2,34 +2,61 @@
   <div class="features__container">
     <div class="features__header" data-aos="fade-up">
       <span class="features__label">Why Choose Us</span>
-      <h2 class="features__title">Why Partner With Triputi Pharma</h2>
+      <h2 class="features__title">Why Healthcare Providers Partner With Us</h2>
       <p class="features__subtitle">
-        We are committed to being the most dependable pharmaceutical supply partner for healthcare businesses.
+        A dependable pharmaceutical marketing and distribution partner built around availability,
+        trusted brands, and service that keeps your supply running.
       </p>
     </div>
 
     <div class="features__grid">
       @for (feature of features; track feature.title; let i = $index) {
-        <div class="features__card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
-          <div class="features__card-icon">
-            @switch (feature.icon) {
-              @case ('layers') {
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22.6 11.08-8.58 3.91a2 2 0 0 1-1.66 0l-8.58-3.9"/><path d="m22.6 15.08-8.58 3.91a2 2 0 0 1-1.66 0L3.6 15.18"/></svg>
+        <article
+          class="features__card"
+          [class.features__card--wide]="feature.wide"
+          [class.features__card--persistent]="feature.persistentHover"
+          [attr.data-aos]="'fade-up'"
+          [attr.data-aos-delay]="i * 80">
+          <span class="features__card-dots" aria-hidden="true"></span>
+
+          <div class="features__card-top">
+            <div class="features__card-icon">
+              @switch (feature.icon) {
+                @case ('layers') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22.6 11.08-8.58 3.91a2 2 0 0 1-1.66 0l-8.58-3.9"/><path d="m22.6 15.08-8.58 3.91a2 2 0 0 1-1.66 0L3.6 15.18"/></svg>
+                }
+                @case ('award') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                }
+                @case ('tag') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+                }
+                @case ('zap') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                }
               }
-              @case ('award') {
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-              }
-              @case ('tag') {
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
-              }
-              @case ('zap') {
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              }
+            </div>
+            @if (feature.status) {
+              <span class="features__card-status">{{ feature.status }}</span>
             }
           </div>
-          <h3 class="features__card-title">{{ feature.title }}</h3>
+
+          <h3 class="features__card-title">
+            {{ feature.title }}
+            @if (feature.meta) {
+              <span class="features__card-meta">{{ feature.meta }}</span>
+            }
+          </h3>
           <p class="features__card-desc">{{ feature.description }}</p>
-        </div>
+
+          @if (feature.tags?.length) {
+            <div class="features__card-tags">
+              @for (tag of feature.tags; track tag) {
+                <span class="features__card-tag">#{{ tag }}</span>
+              }
+            </div>
+          }
+        </article>
       }
     </div>
   </div>

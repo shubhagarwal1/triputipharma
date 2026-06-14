@@ -7,17 +7,30 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrl: './contact.scss',
 })
 export class Contact {
-  phone = '+919717073873';
-  phoneDisplay = '097170 73873';
-  whatsappUrl = 'https://wa.me/919717073873?text=Hi%20Triputi%20Pharma%2C%20I%20would%20like%20to%20enquire%20about%20your%20products.';
-  mapsUrl = 'https://www.google.com/maps/place/Triputi+Pharma/@28.4431,76.9896,17z';
-  address = 'Plot No.3, Gali No.1, Khasra No.511/1, Basai Industrial Area, Near RK Hotel Residency, Ward No.12, Basai, Gurugram (Haryana) 122006';
+  /** Voice numbers — rendered as clickable tel: links on desktop and mobile. */
+  callNumbers = [
+    { display: '+91 94166 08873', tel: '+919416608873' },
+    { display: '+91 99717 15159', tel: '+919971715159' },
+  ];
+
+  /** WhatsApp numbers — rendered as clickable wa.me links. */
+  private readonly waText =
+    'Hi%20Triputi%20Pharma%2C%20I%20would%20like%20to%20enquire%20about%20your%20product%20range%20and%20distribution%20services.';
+  whatsappNumbers = [
+    { display: '+91 94166 08873', url: `https://wa.me/919416608873?text=${this.waText}` },
+    { display: '+91 97170 73873', url: `https://wa.me/919717073873?text=${this.waText}` },
+  ];
+
+  mapsUrl =
+    'https://www.google.com/maps/dir//Tirupati+Pharma,+Basement+In+Patanjali+Mega+Store,+near+Raas+Wellness+Spa,+Jharsa,+Sector+39,+Gurugram,+Haryana+122003/@28.4380889,77.0519923,16z';
+  address =
+    'Basement, Patanjali Mega Store, Near Raas Wellness Spa, Jharsa, Sector 39, Gurugram, Haryana 122003';
 
   safeMapsUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
     this.safeMapsUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.5!2d76.9896!3d28.4431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTriputi+Pharma!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin'
+      'https://www.google.com/maps?q=28.4380889,77.0519923&z=16&hl=en&output=embed',
     );
   }
 }
