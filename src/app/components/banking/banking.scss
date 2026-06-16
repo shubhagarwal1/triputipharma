@@ -1,0 +1,246 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.banking {
+  @include section-padding;
+  background: $surface;
+
+  &__container {
+    @include container;
+  }
+
+  // === HEADER ===
+  &__header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    @include section-heading;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include section-subheading;
+    margin: 0 auto;
+
+    strong {
+      color: $text-primary;
+      font-weight: 600;
+    }
+  }
+
+  // === GRID ===
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+
+    @include desktop {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__accounts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // === BANK CARD ===
+  &__card {
+    @include card;
+    padding: 24px;
+    border: 1px solid $divider;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $divider;
+  }
+
+  &__card-icon {
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    flex-shrink: 0;
+    background: $primary-50;
+    color: $primary;
+    border-radius: $radius-md;
+  }
+
+  &__bank-name {
+    font-family: $font-heading;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: $text-primary;
+    line-height: 1.2;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    dt {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $text-light;
+    }
+
+    dd {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+  }
+
+  &__value {
+    font-family: $font-heading;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: $text-primary;
+    letter-spacing: 0.02em;
+    word-break: break-all;
+
+    &--muted {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: $text-secondary;
+      letter-spacing: 0;
+    }
+  }
+
+  &__copy {
+    @include flex-center;
+    flex-shrink: 0;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    background: $primary-50;
+    color: $primary;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+    }
+  }
+
+  &__copied {
+    font-family: $font-heading;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  // === UPI QR CARD ===
+  &__qr-card {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px 24px;
+    background: $card;
+    border: 1px solid $divider;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-md;
+    text-align: center;
+
+    @include desktop {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  &__qr-tag {
+    font-family: $font-heading;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $primary;
+    padding: 5px 14px;
+    background: $primary-50;
+    border-radius: $radius-full;
+  }
+
+  &__qr-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: $radius-lg;
+    border: 1px solid $divider;
+  }
+
+  &__qr-note {
+    font-family: $font-heading;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $text-secondary;
+  }
+
+  &__qr-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 8px;
+    border-top: 1px solid $divider;
+    width: 100%;
+  }
+
+  &__qr-merchant {
+    font-family: $font-heading;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: $text-primary;
+  }
+
+  &__qr-mobile {
+    font-family: $font-heading;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}

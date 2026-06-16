@@ -19,6 +19,7 @@ import { ServiceAreas } from '../../components/service-areas/service-areas';
 import { Brands } from '../../components/brands/brands';
 import { Catalogues } from '../../components/catalogues/catalogues';
 import { Testimonials } from '../../components/testimonials/testimonials';
+import { Banking } from '../../components/banking/banking';
 import { Contact } from '../../components/contact/contact';
 import { Footer } from '../../components/footer/footer';
 import { SeoService } from '../../services/seo';
@@ -42,6 +43,7 @@ import {
     Brands,
     Catalogues,
     Testimonials,
+    Banking,
     Contact,
     Footer,
   ],

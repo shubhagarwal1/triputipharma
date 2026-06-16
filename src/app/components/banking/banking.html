@@ -1,0 +1,72 @@
+<section class="banking" id="banking">
+  <div class="banking__container">
+    <div class="banking__header" data-aos="fade-up">
+      <span class="banking__label">Payments</span>
+      <h2 class="banking__title">Banking &amp; Payment Details</h2>
+      <p class="banking__subtitle">
+        Pay securely via bank transfer (NEFT / RTGS / IMPS) or scan the UPI QR for instant payment.
+        All accounts are registered to <strong>{{ accountHolder }}</strong>.
+      </p>
+    </div>
+
+    <div class="banking__grid">
+      <!-- Bank account cards -->
+      <div class="banking__accounts">
+        @for (acc of accounts; track acc.accountNo) {
+          <div class="banking__card" data-aos="fade-up">
+            <div class="banking__card-head">
+              <div class="banking__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 18 0"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg>
+              </div>
+              <h3 class="banking__bank-name">{{ acc.name }}</h3>
+            </div>
+
+            <dl class="banking__rows">
+              <div class="banking__row">
+                <dt>Account No.</dt>
+                <dd>
+                  <span class="banking__value">{{ acc.accountNo }}</span>
+                  <button type="button" class="banking__copy" (click)="copy(acc.accountNo, acc.accountNo)" [attr.aria-label]="'Copy account number for ' + acc.name">
+                    @if (copiedKey() === acc.accountNo) {
+                      <span class="banking__copied">Copied</span>
+                    } @else {
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    }
+                  </button>
+                </dd>
+              </div>
+              <div class="banking__row">
+                <dt>IFSC Code</dt>
+                <dd>
+                  <span class="banking__value">{{ acc.ifsc }}</span>
+                  <button type="button" class="banking__copy" (click)="copy(acc.ifsc, acc.ifsc)" [attr.aria-label]="'Copy IFSC code for ' + acc.name">
+                    @if (copiedKey() === acc.ifsc) {
+                      <span class="banking__copied">Copied</span>
+                    } @else {
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    }
+                  </button>
+                </dd>
+              </div>
+              <div class="banking__row">
+                <dt>Branch</dt>
+                <dd><span class="banking__value banking__value--muted">{{ acc.branch }}</span></dd>
+              </div>
+            </dl>
+          </div>
+        }
+      </div>
+
+      <!-- UPI QR card -->
+      <div class="banking__qr-card" data-aos="fade-left">
+        <span class="banking__qr-tag">Scan &amp; Pay</span>
+        <img class="banking__qr-img" src="/images/banking/upi-qr.png" alt="UPI / BHIM payment QR code for Triputi Pharma (ICICI Bank)" loading="lazy" decoding="async" />
+        <p class="banking__qr-note">UPI · BHIM · ICICI Pockets</p>
+        <div class="banking__qr-meta">
+          <span class="banking__qr-merchant">{{ upiMerchant }}</span>
+          <a class="banking__qr-mobile" [href]="'tel:+91' + upiMobile">+91 {{ upiMobile }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
