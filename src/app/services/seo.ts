@@ -54,7 +54,7 @@ export class SeoService {
       name: 'keywords',
       content: area
         ? `pharmaceutical distribution partner ${area.name}, medicine distribution ${area.name}, healthcare distribution network Haryana, Triputi Pharma, pharmaceutical distribution services ${area.name}, pharma marketing company`
-        : 'Triputi Pharma, pharmaceutical distribution partner, pharma marketing company Gurugram, healthcare distribution network Haryana, medicine distribution Delhi NCR Rajasthan Gujarat, pharmaceutical distribution services, Sector 39 Gurugram',
+        : 'Triputi Pharma, pharmaceutical distribution partner, pharma marketing company Gurugram, healthcare distribution network Haryana, medicine distribution Delhi NCR Rajasthan Gujarat, pharmaceutical distribution services, Sector 9 Basai Gurugram',
     });
 
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
@@ -107,17 +107,15 @@ export class SeoService {
         description: DEFAULT_META.description,
         address: {
           '@type': 'PostalAddress',
-          streetAddress:
-            'Basement, Patanjali Mega Store, Near Raas Wellness Spa, Jharsa, Sector 39',
+          streetAddress: 'Sector 9, Basai',
           addressLocality: 'Gurugram',
           addressRegion: 'Haryana',
-          postalCode: '122003',
           addressCountry: 'IN',
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 28.4380889,
-          longitude: 77.0519923,
+          latitude: 28.4581643,
+          longitude: 76.9891118,
         },
         areaServed,
         sameAs: [
@@ -142,17 +140,15 @@ export class SeoService {
         telephone: '+91-9416608873',
         address: {
           '@type': 'PostalAddress',
-          streetAddress:
-            'Basement, Patanjali Mega Store, Near Raas Wellness Spa, Jharsa, Sector 39',
+          streetAddress: 'Sector 9, Basai',
           addressLocality: 'Gurugram',
           addressRegion: 'Haryana',
-          postalCode: '122003',
           addressCountry: 'IN',
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 28.4380889,
-          longitude: 77.0519923,
+          latitude: 28.4581643,
+          longitude: 76.9891118,
         },
         priceRange: '₹₹',
       },

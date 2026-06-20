@@ -24,9 +24,8 @@ export class Navbar {
     { label: 'Contact', target: 'contact' },
   ];
 
-  /** Embed-friendly Google Maps location used by the header utility strip + contact map. */
-  mapsUrl =
-    'https://www.google.com/maps/place/Triputi+Pharma/@28.6786159,76.6528014,11z/data=!4m17!1m10!4m9!1m4!2m2!1d76.5883096!2d28.8937795!4e1!1m3!2m2!1d76.989014!2d28.45775!3m5!1s0x390d179f349afbd5:0xf36461ad2a1827db!8m2!3d28.4581643!4d76.9891118!16s%2Fg%2F11s75vvc2_?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D';
+  /** Google Maps share link for the shop, used by the header location link. */
+  mapsUrl = 'https://maps.app.goo.gl/szqgAPzwRU7Saiua7';
 
   @HostListener('window:scroll')
   onScroll(): void {

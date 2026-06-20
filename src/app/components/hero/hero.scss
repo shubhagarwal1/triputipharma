@@ -65,18 +65,19 @@
     position: relative;
     z-index: $z-hero-content;
     @include container;
-    // Clear the fixed navbar (~72px) on every viewport so the badge never overlaps it.
-    padding-top: 108px;
+    // Clear the fixed header (~102px: 38px utility strip + 64px nav) at the top of the
+    // page on every viewport so the badge never overlaps it.
+    padding-top: 116px;
     padding-bottom: 56px;
 
     @include tablet {
-      padding-top: 124px;
+      padding-top: 132px;
     }
 
     @include desktop {
       max-width: 720px;
       margin: 0;
-      padding-top: 96px;
+      padding-top: 120px;
       padding-left: max(40px, calc((100vw - #{$container-max}) / 2 + 40px));
     }
   }

@@ -45,7 +45,7 @@ export class Hero implements AfterViewInit, OnDestroy {
       eyebrow: 'Trusted Brand Portfolio',
       title: 'Leading Brands, Delivered with Confidence',
       subtitle:
-        'Official distribution partner for Troikaa (Novogen), Syndicate Medicare, Sunlife, Microlife, and more — a curated portfolio healthcare providers rely on.',
+        'Official distribution partner for Troikaa (Novogen), Syndicate Medicare, KASDAP Genexx, KASDAP Healthcare, and more — a curated portfolio healthcare providers rely on.',
       cta: 'View Partner Brands',
       target: 'brands',
       bgClass: 'slide-2',

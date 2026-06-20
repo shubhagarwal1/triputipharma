@@ -41,34 +41,34 @@ export class Catalogues {
       brand: 'Syndicate Medicare',
     },
     {
-      title: 'Sunlife',
+      title: 'KASDAP Genexx Catalogue',
       description:
-        'The complete Sunlife range — quality formulations for everyday and specialised healthcare needs.',
+        'Complete product range from KASDAP Genexx — advanced pharmaceutical formulations for modern healthcare.',
       url: `${RELEASE_BASE}/KASDAP.GENEXX.CATALOGUE.2.pdf`,
       fileSize: '145 MB',
-      pages: 'Full Range',
+      pages: '76 Pages',
       gradient: 'linear-gradient(135deg, #DC2626, #B91C1C)',
-      brand: 'Sunlife',
+      brand: 'KASDAP Genexx',
     },
     {
-      title: 'Microlife',
+      title: 'KASDAP Healthcare Catalogue',
       description:
-        'The Microlife portfolio of pharmaceutical and wellness products, available through our distribution network.',
+        "KASDAP Healthcare's complete portfolio of pharmaceutical and wellness products.",
       url: `${RELEASE_BASE}/KASDAP-HEALTHCARE.CATALOGUE.pdf`,
       fileSize: '82 MB',
-      pages: 'Full Range',
+      pages: '44 Pages',
       gradient: 'linear-gradient(135deg, #0891B2, #0E7490)',
-      brand: 'Microlife',
+      brand: 'KASDAP Healthcare',
     },
     {
-      title: 'Synthokind',
+      title: 'PCI Product Catalogue',
       description:
-        'The latest Synthokind catalogue featuring their complete range of pharmaceutical products.',
+        'Latest product catalogue from PCI featuring their complete range of pharmaceutical products.',
       url: `${RELEASE_BASE}/PCI.Product.Catalogue.New.DT.06.05.26.pdf`,
       fileSize: '191 MB',
-      pages: 'Latest Edition',
+      pages: '76 Pages',
       gradient: 'linear-gradient(135deg, #7C3AED, #6D28D9)',
-      brand: 'Synthokind',
+      brand: 'PCI Pharma',
     },
   ];
 

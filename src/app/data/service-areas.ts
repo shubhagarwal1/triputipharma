@@ -17,7 +17,7 @@ export const DEFAULT_META = {
   title:
     'Triputi Pharma | Pharmaceutical Marketing & Distribution Partner — Haryana, Delhi NCR, Rajasthan & Gujarat',
   description:
-    'Triputi Pharma is a trusted pharmaceutical marketing and distribution partner in Sector 39, Gurugram. 2000+ products and reliable supply for pharmacies, hospitals, clinics, and healthcare institutions across Haryana, Delhi NCR, Rajasthan, and Gujarat.',
+    'Triputi Pharma is a trusted pharmaceutical marketing and distribution partner in Sector 9, Basai, Gurugram. 2000+ products and reliable supply for pharmacies, hospitals, clinics, and healthcare institutions across Haryana, Delhi NCR, Rajasthan, and Gujarat.',
 };
 
 export const SERVICE_AREAS: ServiceArea[] = [
@@ -31,9 +31,9 @@ export const SERVICE_AREAS: ServiceArea[] = [
   {
     slug: 'gurugram',
     name: 'Gurugram',
-    headline: 'Sector 39, Jharsa — our home hub',
+    headline: 'Sector 9, Basai — our home hub',
     localBlurb:
-      'From our Sector 39 (Jharsa) hub, we serve Gurugram pharmacies, polyclinics, and hospitals with fast turnaround on high-demand molecules and full catalogue coverage.',
+      'From our Sector 9 (Basai) hub, we serve Gurugram pharmacies, polyclinics, and hospitals with fast turnaround on high-demand molecules and full catalogue coverage.',
   },
   {
     slug: 'faridabad',

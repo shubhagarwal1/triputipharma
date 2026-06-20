@@ -36,7 +36,7 @@ export class Features {
       title: 'Trusted Brand Portfolio',
       meta: '8+ brands',
       description:
-        'Distribution partner for Troikaa (Novogen), Syndicate Medicare, Synthokind, Sunlife, Microlife, and more.',
+        'Distribution partner for Troikaa (Novogen), Syndicate Medicare, PCI Pharma, KASDAP Genexx, KASDAP Healthcare, and more.',
       tags: ['Quality'],
       status: 'Verified',
     },
