@@ -17,6 +17,8 @@ export class Brands {
     { name: 'PCI Pharma', color: '#7C3AED' },
     { name: 'KASDAP Genexx', color: '#DC2626' },
     { name: 'KASDAP Healthcare', color: '#0891B2' },
+    { name: 'Sunlife', color: '#D97706' },
+    { name: 'Microlife', color: '#059669' },
     { name: 'Mcross', color: '#B45309' },
     { name: 'L&T', color: '#15803D' },
     { name: 'Helbrede', color: '#7C3AED' },

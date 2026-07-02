@@ -70,6 +70,36 @@ export class Catalogues {
       gradient: 'linear-gradient(135deg, #7C3AED, #6D28D9)',
       brand: 'PCI Pharma',
     },
+    {
+      title: 'Sunlife Catalogue 2024',
+      description:
+        'The complete Sunlife 2024 range — quality formulations across everyday and specialised healthcare needs.',
+      url: `${RELEASE_BASE}/SUNLIFE.CATALOGUE.2024.WEB.pdf`,
+      fileSize: '36 MB',
+      pages: '96 Pages',
+      gradient: 'linear-gradient(135deg, #F59E0B, #D97706)',
+      brand: 'Sunlife',
+    },
+    {
+      title: 'Microlife Catalogue 2024',
+      description:
+        'The Microlife 2024 catalogue — full portfolio of pharmaceutical and wellness products.',
+      url: `${RELEASE_BASE}/MICROLIFE.CATALOGUE.2024.pdf`,
+      fileSize: '61 MB',
+      pages: '124 Pages',
+      gradient: 'linear-gradient(135deg, #059669, #047857)',
+      brand: 'Microlife',
+    },
+    {
+      title: 'Nutraceuticals Catalogue',
+      description:
+        'Our nutraceuticals range — nutritional supplements and wellness products for everyday health.',
+      url: `${RELEASE_BASE}/Nutraceuticals.Catalogue.Final.pdf`,
+      fileSize: '2 MB',
+      pages: '28 Pages',
+      gradient: 'linear-gradient(135deg, #65A30D, #4D7C0F)',
+      brand: 'Nutraceuticals',
+    },
   ];
 
   viewPdf(url: string): void {
